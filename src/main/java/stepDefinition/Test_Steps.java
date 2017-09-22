@@ -27,7 +27,7 @@ public class Test_Steps {
 		driver.findElement(By.xpath("//*[@type='email']")).sendKeys("yagna.bitspilani");
 		driver.findElement(By.xpath("//*[text()='Next']")).click();
 		Thread.sleep(4000);
-		driver.findElement(By.xpath("//*[@type='password']")).sendKeys("Sumathi#2");
+		driver.findElement(By.xpath("//*[@type='password']")).sendKeys("1234");
 		driver.findElement(By.xpath("//*[text()='Next']")).click();
 	
 	}
@@ -41,8 +41,8 @@ public class Test_Steps {
 		
 	}
 	
-	@When("^User enters \"(.*)\" and \"(.*)\" $")
-	public void user_enters_Username_and_Password(String username,String password) throws InterruptedException{
+	@When("^User enters \"([^\"]*)\" and \"([^\"]*)\"$")
+	public void user_enters_and(String username,String password) throws InterruptedException{
 		driver.findElement(By.xpath("//*[@type='email']")).sendKeys(username);
 		driver.findElement(By.xpath("//*[text()='Next']")).click();
 		Thread.sleep(4000);
