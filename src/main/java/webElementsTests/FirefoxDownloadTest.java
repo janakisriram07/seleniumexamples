@@ -1,5 +1,6 @@
 package webElementsTests;
 
+import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -10,12 +11,25 @@ import org.openqa.selenium.firefox.FirefoxProfile;
 public class FirefoxDownloadTest {
 	public static String downloadPath = "/tmp";
 	public static void main(String[] args) throws Exception {
+		//WebDriver driver = new FirefoxDriver();
+		File f = new File("/tmp/SampleXLSFile_19kb.xls");
+		
+		//Deleting the file
+		f.delete();
+		
 		WebDriver driver = new FirefoxDriver(getFirefoxDriverProfile());
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		driver.get("http://www.sample-videos.com/download-sample-xls.php");
 		
 		driver.findElement(By.xpath("//*[@download='SampleXLSFile_19kb.xls']")).click();
+		
+		//Checking whether new file got downloaded
+		if(f.exists()){
+			System.out.println("File exists .. Test Passed !!!");
+		}else{
+			System.out.println("Test Failed !!!");
+		}
 		
 	}
 
