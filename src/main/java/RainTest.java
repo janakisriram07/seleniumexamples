@@ -14,8 +14,11 @@ import org.testng.annotations.Test;
 public class RainTest 
 {
 
+	//This is test commit
+
 	@Test
 	public void test1() {
+		System.out.println("hello");
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\saise\\chromedriver.exe");
 		ChromeDriver c = new ChromeDriver();
 		c.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
