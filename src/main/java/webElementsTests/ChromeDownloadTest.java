@@ -14,7 +14,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 public class ChromeDownloadTest {
 
 	public static void main(String[] args) throws InterruptedException {
-		System.setProperty("webdriver.chrome.driver", "/tmp/chromedriver2");
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\saise\\chromedriver.exe");
 		String downloadPath = "/tmp";
 
 		HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
